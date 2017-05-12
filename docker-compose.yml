@@ -1,0 +1,9 @@
+version: '2'
+services:
+  lt.pokedex:
+    build: .
+    volumes:
+      - ./:/usr/src/lt.pokedex
+      - /usr/src/lt.pokedex/node_modules
+    ports:
+      - "3000:3000"

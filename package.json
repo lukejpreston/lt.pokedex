@@ -1,0 +1,15 @@
+{
+  "name": "lt.pokedex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lukejpreston/lt.pokedex.git",
+  "author": "Luke Preston <luke.preston@bbc.co.uk>",
+  "license": "MIT",
+  "scripts": {
+    "generate": "node scripts/generate-data.js"
+  },
+  "dependencies": {
+    "base64-img": "^1.0.3",
+    "lokijs": "^1.4.3"
+  }
+}
