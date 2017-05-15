@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:7
 
 RUN mkdir -p /usr/src/lt.pokedex
 WORKDIR /usr/src/lt.pokedex

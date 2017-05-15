@@ -1,4 +1,4 @@
-const api = require('./api')
+const api = require('./')
 
 describe('languages', () => {
   test('using an id', () => {
