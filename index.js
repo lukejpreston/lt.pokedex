@@ -15,7 +15,7 @@ list.forEach(item => {
 let createViews = {
   abilities () {},
 	berries (idName, language) {
-
+    collections.berries
   },
 	berryFirmnesses () {},
 	berryFlavors () {},
@@ -84,8 +84,20 @@ Object.keys(createViews).forEach(key => {
   createViews[key]()
 })
 
-console.log(collections.languages.data[0])
+const api = {
+  languages (idName) {
+    const byName = collections.languages.findOne({
+      name: idName
+    })
 
-// module.exports = {
-//   db, collections, views
-// }
+    const byId = collections.languages.findOne({
+      id: String(idName)
+    })
+
+    return byName || byId || null
+  }
+}
+
+module.exports = {
+  db, collections, api
+}
