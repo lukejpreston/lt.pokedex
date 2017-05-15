@@ -21,7 +21,7 @@ fs.readdirSync(location)
     console.log('read <==', fileName)
     const fullName = path.resolve(process.cwd(), location, fileName)
     const data = fs.readFileSync(fullName).toString()
-    fileName = fileName.replace(/_/g, '-').replace('.csv', '.json')
+    fileName = fileName.replace('.csv', '.json')
     db.push(fileName)
     fileName = path.join(output, fileName)
 
