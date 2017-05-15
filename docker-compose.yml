@@ -5,7 +5,9 @@ services:
     volumes:
       - ./:/usr/src/lt.pokedex
       - /usr/src/lt.pokedex/node_modules
+      - /usr/src/lt.pokedex/pokeapi
+      - /usr/src/lt.pokedex/data
   test:
     extends:
       service: lt.pokedex
-    command: yarn test
+    command: yarn test -- --watch

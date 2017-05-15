@@ -1,14 +1,14 @@
 const Lokijs = require('lokijs')
-const list = require('../data/db.json')
+const list = require('../../data/db.json')
 const db = new Lokijs('lt.pokedex')
-const deLokiClone = require('./de-loki-clone')
+const deLokiClone = require('../de-loki-clone')
 
 module.exports = () => {
   let collections = {}
 
   list.forEach(item => {
     const name = item.replace('.json', '')
-    const data = require(`../data/${item}`)
+    const data = require(`../../data/${item}`)
     collections[`_${name}`] = db.addCollection(`_${name}`)
     collections[`_${name}`].insert(data)
   })
