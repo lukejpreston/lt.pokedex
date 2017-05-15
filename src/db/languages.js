@@ -1,18 +1,18 @@
 const deLokiClone = require('../de-loki-clone')
 
 module.exports = (db) => {
-  const _languages = db.getCollection('_languages')
-  const _languagesNames = db.getCollection('_language_names')
+  const languagesCollection = db.getCollection('_languages')
+  const languagesNamesCollection = db.getCollection('_language_names')
   const languages = db.addCollection('languages')
 
-  _languages.data.forEach(language => {
+  languagesCollection.data.forEach(language => {
     let newLanguage = deLokiClone(language)
 
     newLanguage.id = parseInt(newLanguage.id, 10)
     newLanguage.official = newLanguage.official === '1'
     delete newLanguage.order
 
-    let names = _languagesNames.findOne({
+    let names = languagesNamesCollection.findOne({
       language_id: language.id
     })
     if (names !== null) {
