@@ -3,6 +3,15 @@ const list = require('./data/db.json')
 
 const db = new Lokijs('lt.pokedex')
 
+const deLokiClone = (data) => {
+  if (data !== null) {
+    data = Object.assign({}, data)
+    delete data.meta
+    delete data['$loki']
+  }
+  return data
+}
+
 let collections = {}
 
 list.forEach(item => {
@@ -39,17 +48,27 @@ let createViews = {
 	languages () {
     collections.languages = db.addCollection('languages')
     collections._languages.data.forEach(language => {
-      let newLanguage = Object.assign({}, language)
-      delete newLanguage.meta
-      delete newLanguage['$loki']
+
+      let newLanguage = deLokiClone(language)
+
+      newLanguage.id = parseInt(newLanguage.id, 10)
+      newLanguage.official = newLanguage.official === '1'
+      delete newLanguage.order
+
       let names = collections._language_names.findOne({
         language_id: language.id
       })
-      if (names !== null) Object.keys(names).forEach(key => {
-        if (key !== 'meta' && key !== '$loki') {
-          newLanguage[key] = names[key]
+      if (names !== null) {
+        newLanguage.names = {
+          name: names.name,
+          language: {
+            name: newLanguage.identifier,
+            url: `http"//pokeapi.co/api/v2/language/${newLanguage.id}`,
+            query: `pokedex.language(${newLanguage.id})`
+          }
         }
-      })
+      }
+
       collections.languages.insert(newLanguage)
     })
   },
@@ -91,13 +110,16 @@ const api = {
     })
 
     const byId = collections.languages.findOne({
-      id: String(idName)
+      id: parseInt(idName, 10)
     })
 
-    return byName || byId || null
+    return deLokiClone(byName) || deLokiClone(byId) || null
   }
 }
+//
+// module.exports = {
+//   db, collections, api
+// }
 
-module.exports = {
-  db, collections, api
-}
+
+console.log(api.languages(9))
