@@ -8,10 +8,84 @@ let collections = {}
 list.forEach(item => {
   const name = item.replace('.json', '')
   const data = require(`./data/${item}`)
-  collections[name] = db.addCollection(name)
-  collections[name].insert(data)
+  collections[`_${name}`] = db.addCollection(name)
+  collections[`_${name}`].insert(data)
 })
 
-module.exports = {
-  db, collections
+let createViews = {
+  abilities () {},
+	berries (idName, language) {
+
+  },
+	berryFirmnesses () {},
+	berryFlavors () {},
+	characteristics () {},
+	contestTypes () {},
+	contestEffects () {},
+	eggGroups () {},
+	encounterMethods () {},
+	encounterConditions () {},
+	encounterConditionValues () {},
+	evolutionChains () {},
+	evolutionTriggers () {},
+	generations () {},
+	genders () {},
+	growthRates () {},
+	items () {},
+	itemCategories () {},
+	itemAttributes () {},
+	itemFlingEffects () {},
+	itemPockets () {},
+	languages () {
+    collections.languages = db.addCollection('languages')
+    collections._languages.data.forEach(language => {
+      let newLanguage = Object.assign({}, language)
+      delete newLanguage.meta
+      delete newLanguage['$loki']
+      let names = collections._language_names.findOne({
+        language_id: language.id
+      })
+      if (names !== null) Object.keys(names).forEach(key => {
+        if (key !== 'meta' && key !== '$loki') {
+          newLanguage[key] = names[key]
+        }
+      })
+      collections.languages.insert(newLanguage)
+    })
+  },
+	locations () {},
+	locationAreas () {},
+	moves () {},
+	moveAilments () {},
+	moveBattleStyles () {},
+	moveCategories () {},
+	moveDamageClasses () {},
+	moveLearnMethods () {},
+	moveTargets () {},
+	natures () {},
+	palParkAreas () {},
+	pokedexes () {},
+	pokemon () {},
+	pokemonColors () {},
+	pokemonForms () {},
+	pokemonHabitats () {},
+	pokemonShapes () {},
+	pokemonSpecies () {},
+	pokeathlonStats () {},
+	regions () {},
+	stats () {},
+	superContestEffects () {},
+	types () {},
+	version () {},
+	versionGroups () {}
 }
+
+Object.keys(createViews).forEach(key => {
+  createViews[key]()
+})
+
+console.log(collections.languages.data[0])
+
+// module.exports = {
+//   db, collections, views
+// }
