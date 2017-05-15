@@ -20,8 +20,7 @@ module.exports = (db) => {
         name: names.name,
         language: {
           name: newLanguage.identifier,
-          url: `http"//pokeapi.co/api/v2/language/${newLanguage.id}`,
-          query: `pokedex.language(${newLanguage.id})`
+          url: `http"//pokeapi.co/api/v2/language/${newLanguage.id}`
         }
       }
     }

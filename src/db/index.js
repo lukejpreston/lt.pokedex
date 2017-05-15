@@ -2,6 +2,7 @@ const Lokijs = require('lokijs')
 const list = require('../../data/db.json')
 const db = new Lokijs('lt.pokedex')
 
+const ability = require('./ability')
 const languages = require('./languages')
 
 module.exports = () => {
@@ -15,7 +16,7 @@ module.exports = () => {
   })
 
   let createCollections = {
-    abilities () {},
+    ability,
     berries () {},
     berryFirmnesses () {},
     berryFlavors () {},

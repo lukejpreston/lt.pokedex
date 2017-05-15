@@ -12,7 +12,7 @@ const pokedex = require('lt.pokedex')
 pokedex.languages('English')
 ```
 
-abilities
+ability
 
 berries
 
