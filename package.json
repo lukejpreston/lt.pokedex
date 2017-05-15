@@ -6,14 +6,25 @@
   "author": "Luke Preston <luke.preston@bbc.co.uk>",
   "license": "MIT",
   "scripts": {
+    "pokeapi": "git clone https://github.com/PokeAPI/pokeapi.git",
     "generate": "node scripts/generate-data.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "esw src scripts",
+    "ci": "ls pokeapi || npm run pokeapi && npm run generate && npm run lint && npm run test"
   },
   "dependencies": {
     "base64-img": "^1.0.3",
     "lokijs": "^1.4.3"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^20.0.1",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-watch": "^3.1.0",
     "jest": "^20.0.1"
   }
 }

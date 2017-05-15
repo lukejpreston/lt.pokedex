@@ -11,3 +11,11 @@ services:
     extends:
       service: lt.pokedex
     command: yarn test -- --watch
+  lint:
+    extends:
+      service: lt.pokedex
+    command: yarn lint -- --watch
+  ci:
+    extends:
+      service: lt.pokedex
+    command: yarn ci

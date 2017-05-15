@@ -7,7 +7,7 @@ const output = path.join(process.cwd(), '/data')
 
 try {
   fs.mkdirSync(output)
-} catch(err) {
+} catch (err) {
   if (err.code !== 'EEXIST') {
     console.error(err)
     process.exit(1)

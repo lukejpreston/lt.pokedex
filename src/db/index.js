@@ -15,32 +15,31 @@ module.exports = () => {
 
   let createViews = {
     abilities () {},
-  	berries (idName, language) {
-      collections.berries
+    berries (idName, language) {
+
     },
-  	berryFirmnesses () {},
-  	berryFlavors () {},
-  	characteristics () {},
-  	contestTypes () {},
-  	contestEffects () {},
-  	eggGroups () {},
-  	encounterMethods () {},
-  	encounterConditions () {},
-  	encounterConditionValues () {},
-  	evolutionChains () {},
-  	evolutionTriggers () {},
-  	generations () {},
-  	genders () {},
-  	growthRates () {},
-  	items () {},
-  	itemCategories () {},
-  	itemAttributes () {},
-  	itemFlingEffects () {},
-  	itemPockets () {},
-  	languages () {
+    berryFirmnesses () {},
+    berryFlavors () {},
+    characteristics () {},
+    contestTypes () {},
+    contestEffects () {},
+    eggGroups () {},
+    encounterMethods () {},
+    encounterConditions () {},
+    encounterConditionValues () {},
+    evolutionChains () {},
+    evolutionTriggers () {},
+    generations () {},
+    genders () {},
+    growthRates () {},
+    items () {},
+    itemCategories () {},
+    itemAttributes () {},
+    itemFlingEffects () {},
+    itemPockets () {},
+    languages () {
       collections.languages = db.addCollection('languages')
       collections._languages.data.forEach(language => {
-
         let newLanguage = deLokiClone(language)
 
         newLanguage.id = parseInt(newLanguage.id, 10)
@@ -64,31 +63,31 @@ module.exports = () => {
         if (newLanguage.id) collections.languages.insert(newLanguage)
       })
     },
-  	locations () {},
-  	locationAreas () {},
-  	moves () {},
-  	moveAilments () {},
-  	moveBattleStyles () {},
-  	moveCategories () {},
-  	moveDamageClasses () {},
-  	moveLearnMethods () {},
-  	moveTargets () {},
-  	natures () {},
-  	palParkAreas () {},
-  	pokedexes () {},
-  	pokemon () {},
-  	pokemonColors () {},
-  	pokemonForms () {},
-  	pokemonHabitats () {},
-  	pokemonShapes () {},
-  	pokemonSpecies () {},
-  	pokeathlonStats () {},
-  	regions () {},
-  	stats () {},
-  	superContestEffects () {},
-  	types () {},
-  	version () {},
-  	versionGroups () {}
+    locations () {},
+    locationAreas () {},
+    moves () {},
+    moveAilments () {},
+    moveBattleStyles () {},
+    moveCategories () {},
+    moveDamageClasses () {},
+    moveLearnMethods () {},
+    moveTargets () {},
+    natures () {},
+    palParkAreas () {},
+    pokedexes () {},
+    pokemon () {},
+    pokemonColors () {},
+    pokemonForms () {},
+    pokemonHabitats () {},
+    pokemonShapes () {},
+    pokemonSpecies () {},
+    pokeathlonStats () {},
+    regions () {},
+    stats () {},
+    superContestEffects () {},
+    types () {},
+    version () {},
+    versionGroups () {}
   }
 
   Object.keys(createViews).forEach(key => {
