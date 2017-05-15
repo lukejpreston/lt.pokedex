@@ -4,16 +4,10 @@ module.exports = (db) => {
   return (idName) => {
     const languages = db.getCollection('languages')
 
-    const byName = languages.findOne({
-      name: idName
-    })
+    const byName = languages.where(language => language.names && language.names.name === idName)
+    if (byName.length > 0) return deLokiClone(byName[0])
 
-    if (byName) return deLokiClone(byName)
-
-    const byId = languages.findOne({
-      id: parseInt(idName, 10)
-    })
-
+    const byId = languages.findOne({ id: parseInt(idName, 10) })
     if (byId) return deLokiClone(byId)
 
     return null

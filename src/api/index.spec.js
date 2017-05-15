@@ -5,4 +5,9 @@ describe('languages', () => {
     const language = api.languages(9)
     expect(language.id).toBe(9)
   })
+
+  test('using a name', () => {
+    const language = api.languages('English')
+    expect(language.id).toBe(9)
+  })
 })
