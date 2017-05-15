@@ -7,8 +7,8 @@ const base = (a) => {
 }
 
 const generation = (db, a) => {
-  const _generations = db.getCollection('_generations')
-  const generation = _generations.findOne({
+  const generationsCollection = db.getCollection('_generations')
+  const generation = generationsCollection.findOne({
     id: String(a.generation_id)
   })
   return {
@@ -18,10 +18,10 @@ const generation = (db, a) => {
 }
 
 const names = (db, a) => {
-  const abilityNames = db.getCollection('_ability_names')
-  const abilityName = abilityNames.where(an => an.ability_id === a.id && an.local_language_id === '9')
+  const abilityNamesCollection = db.getCollection('_ability_names')
+  const abilityNames = abilityNamesCollection.where(an => an.ability_id === a.id && an.local_language_id === '9')
   return [{
-    name: abilityName[0].name,
+    name: abilityNames[0].name,
     language: {
       name: 'en',
       url: `http://pokeapi.co/api/v2/language/9`
@@ -31,11 +31,11 @@ const names = (db, a) => {
 
 const effectEntries = (db, a) => {
   const abilityProseCollection = db.getCollection('_ability_prose')
-  const abilityProse = abilityProseCollection.where(an => an.ability_id === a.id && an.local_language_id === '9')[0]
-  if (abilityProse) {
+  const abilityProses = abilityProseCollection.where(an => an.ability_id === a.id && an.local_language_id === '9')
+  if (abilityProses.length > 0) {
     return [{
-      effect: abilityProse.effect,
-      short_effect: abilityProse.short_effect,
+      effect: abilityProses[0].effect,
+      short_effect: abilityProses[0].short_effect,
       language: {
         name: 'en',
         url: 'http://pokeapi.co/api/v2/language/9'
@@ -45,18 +45,18 @@ const effectEntries = (db, a) => {
 }
 
 const effectChanges = (db, a) => {
-  const _ability_changelog = db.getCollection('_ability_changelog')
-  const abilityChangelog = _ability_changelog.findOne({ id: a.id })
+  const abilityChangelogCollection = db.getCollection('_ability_changelog')
+  const abilityChangelog = abilityChangelogCollection.findOne({ id: a.id })
   if (abilityChangelog === null) return {}
 
-  const _version_groups = db.getCollection('_version_groups')
-  const versionGroup = _version_groups.findOne({
+  const versionGroupsCollection = db.getCollection('_version_groups')
+  const versionGroup = versionGroupsCollection.findOne({
     id: abilityChangelog.changed_in_version_group_id
   })
 
-  const _ability_changelog_prose = db.getCollection('_ability_changelog_prose')
-  const abilityChangelogProse = _ability_changelog_prose.where(acp => acp.local_language_id === '9' && acp.ability_changelog_id === abilityChangelog.id)
-  const effect_entries = abilityChangelogProse.map(acp => {
+  const abilityChangelogProseCollection = db.getCollection('_ability_changelog_prose')
+  const abilityChangelogProse = abilityChangelogProseCollection.where(acp => acp.local_language_id === '9' && acp.ability_changelog_id === abilityChangelog.id)
+  const effectEntries = abilityChangelogProse.map(acp => {
     return {
       effect: acp.effect,
       language: {
@@ -71,17 +71,17 @@ const effectChanges = (db, a) => {
       name: versionGroup.identifier,
       url: `http://pokeapi.co/api/v2/version-group/${versionGroup.id}/`
     },
-    effect_entries
+    effect_entries: effectEntries
   }]
 }
 
 const flavorTextEntries = (db, a) => {
-  const _ability_flavor_text = db.getCollection('_ability_flavor_text')
-  const _version_groups = db.getCollection('_versions')
+  const abilityFlavorTextCollection = db.getCollection('_ability_flavor_text')
+  const versionGroupsCollection = db.getCollection('_versions')
 
-  const abilityFlavorText = _ability_flavor_text.where(aft => aft.language_id === '9' && aft.ability_id === a.id)
+  const abilityFlavorText = abilityFlavorTextCollection.where(aft => aft.language_id === '9' && aft.ability_id === a.id)
   return abilityFlavorText.map(aft => {
-    const versionGroups = _version_groups.findOne({
+    const versionGroups = versionGroupsCollection.findOne({
       id: aft.version_group_id
     })
     return {
@@ -99,19 +99,19 @@ const flavorTextEntries = (db, a) => {
 }
 
 const pokemon = (db, a) => {
-  const _pokemon_abilities = db.getCollection('_pokemon_abilities')
-  const pokemonAbilities = _pokemon_abilities.find({ability_id: String(a.id)})
+  const pokemonAbilitiesCollection = db.getCollection('_pokemon_abilities')
+  const pokemonAbilities = pokemonAbilitiesCollection.find({ability_id: String(a.id)})
 
-  const _pokemon = db.getCollection('_pokemon')
+  const pokemonCollection = db.getCollection('_pokemon')
 
-  return pokemonAbilities.map(p => {
-    const pokemon = _pokemon.findOne({
-      id: p.pokemon_id
+  return pokemonAbilities.map(pa => {
+    const pokemon = pokemonCollection.findOne({
+      id: pa.pokemon_id
     })
 
     return {
-      is_hidden: p.is_hidden === '1',
-      slot: parseInt(p.slot, 10),
+      is_hidden: pa.is_hidden === '1',
+      slot: parseInt(pa.slot, 10),
       pokemon: {
         name: pokemon.identifier,
         url: `http://pokeapi.co/api/v2/pokemon/${pokemon.id}/`
