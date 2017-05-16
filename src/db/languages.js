@@ -16,13 +16,13 @@ module.exports = (db) => {
       language_id: language.id
     })
     if (names !== null) {
-      newLanguage.names = {
+      newLanguage.names = [{
         name: names.name,
         language: {
           name: newLanguage.identifier,
           url: `http"//pokeapi.co/api/v2/language/${newLanguage.id}`
         }
-      }
+      }]
     }
 
     if (newLanguage.id) languages.insert(newLanguage)
