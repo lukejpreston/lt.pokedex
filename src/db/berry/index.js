@@ -9,7 +9,8 @@ const name = require('./name')
 module.exports = (db) => {
   const collection = db.addCollection('berry')
 
-  db.getCollection('_berries').data
+  db.getCollection('_berries')
+    .data
     .filter(b => b.id)
     .forEach(b => {
       const berry = base(b)

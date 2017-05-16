@@ -17,8 +17,8 @@ module.exports = () => {
   })
 
   let createCollections = {
-    ability,
-    berry,
+    ability () {},
+    berry () {},
     berryFirmnesses () {},
     berryFlavors () {},
     characteristics () {},
