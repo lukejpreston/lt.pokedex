@@ -7,7 +7,7 @@ module.exports = (db, a) => {
       short_effect: abilityProses[0].short_effect,
       language: {
         name: 'en',
-        url: 'http://pokeapi.co/api/v2/language/9'
+        url: 'http://pokeapi.co/api/v2/language/9/'
       }
     }]
   }

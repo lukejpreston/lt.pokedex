@@ -1,11 +1,11 @@
 const db = require('../db')()
 
-const languages = require('./languages')
+const language = require('./language')
 const ability = require('./ability')
 const berry = require('./berry')
 
 module.exports = {
-  languages: languages(db),
+  language: language(db),
   ability: ability(db),
   berry: berry(db)
 }

@@ -24,7 +24,11 @@ module.exports = function (string) {
       var data = row.split(',')
       var result = {}
       head.forEach(function (key, index) {
-        result[key] = data[index]
+        var value = data[index]
+        var num = parseInt(value, 10)
+        if (key.startsWith('is_')) result[key] = value === '1'
+        else if (!isNaN(num)) result[key] = num
+        else result[key] = data[index]
       })
       Object.keys(result).forEach(key => {
         if (typeof result[key] === 'string') result[key] = result[key].replace('--', ',')

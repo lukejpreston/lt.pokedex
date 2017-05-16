@@ -1,0 +1,422 @@
+{
+  "effect_changes": [
+    {
+      "effect_entries": [
+        {
+          "effect": "Has no effect in battle.",
+          "language": {
+            "url": "http://pokeapi.co/api/v2/language/9/",
+            "name": "en"
+          }
+        }
+      ],
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/11/",
+        "name": "black-white"
+      }
+    }
+  ],
+  "name": "stench",
+  "generation": {
+    "url": "http://pokeapi.co/api/v2/generation/3/",
+    "name": "generation-iii"
+  },
+  "pokemon": [
+    {
+      "slot": 3,
+      "is_hidden": true,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/44/",
+        "name": "gloom"
+      }
+    },
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/88/",
+        "name": "grimer"
+      }
+    },
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/89/",
+        "name": "muk"
+      }
+    },
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/434/",
+        "name": "stunky"
+      }
+    },
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/435/",
+        "name": "skuntank"
+      }
+    },
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/568/",
+        "name": "trubbish"
+      }
+    },
+    {
+      "slot": 1,
+      "is_hidden": false,
+      "pokemon": {
+        "url": "http://pokeapi.co/api/v2/pokemon/569/",
+        "name": "garbodor"
+      }
+    }
+  ],
+  "is_main_series": true,
+  "effect_entries": [
+    {
+      "short_effect": "Has a 10% chance of making target Pokémon flinch with each hit.",
+      "effect": "This Pokémon's damaging moves have a 10% chance to make the target flinch with each hit if they do not already cause flinching as a secondary effect. This ability does not stack with a held item. Overworld: The wild encounter rate is halved while this Pokémon is first in the party.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    }
+  ],
+  "names": [
+    {
+      "name": "Stench",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "name": "Tanfo",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/8/",
+        "name": "it"
+      }
+    },
+    {
+      "name": "Hedor",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/7/",
+        "name": "es"
+      }
+    },
+    {
+      "name": "Duftnote",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/6/",
+        "name": "de"
+      }
+    },
+    {
+      "name": "Puanteur",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      }
+    },
+    {
+      "name": "악취",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/3/",
+        "name": "ko"
+      }
+    },
+    {
+      "name": "あくしゅう",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/1/",
+        "name": "ja"
+      }
+    }
+  ],
+  "flavor_text_entries": [
+    {
+      "flavor_text": "臭くて　相手が ひるむ　ことがある。",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/11/",
+        "name": "ja-kanji"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "The stench may cause the target to flinch.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "A volte il cattivo odore fa tentennare i nemici.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/8/",
+        "name": "it"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "Es posible que el rival retroceda por el mal olor.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/7/",
+        "name": "es"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "Lässt den Gegner durch Gestank zurückschrecken.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/6/",
+        "name": "de"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "La puanteur peut effrayer l’adversaire.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "악취 때문에 상대가 풀죽을 때가 있다.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/3/",
+        "name": "ko"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "くさくて　あいてが ひるむ　ことがある。",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/1/",
+        "name": "ja"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    },
+    {
+      "flavor_text": "臭くて　相手が ひるむ　ことがある。",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/11/",
+        "name": "ja-kanji"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "The stench may cause the target to flinch.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "A volte il cattivo odore fa tentennare i nemici.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/8/",
+        "name": "it"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "Es posible que el rival retroceda por el mal olor.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/7/",
+        "name": "es"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "Lässt den Gegner durch Gestank zurückschrecken.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/6/",
+        "name": "de"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "La puanteur peut effrayer l’adversaire.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "악취 때문에 상대가 풀죽을 때가 있다.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/3/",
+        "name": "ko"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "くさくて　あいてが ひるむ　ことがある。",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/1/",
+        "name": "ja"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "flavor_text": "The stench may cause the target to flinch.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/14/",
+        "name": "black-2-white-2"
+      }
+    },
+    {
+      "flavor_text": "The stench may cause the target to flinch.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/11/",
+        "name": "black-white"
+      }
+    },
+    {
+      "flavor_text": "La puanteur peut effrayer l’adversaire.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/11/",
+        "name": "black-white"
+      }
+    },
+    {
+      "flavor_text": "The stench helps keep wild Pokémon away.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/10/",
+        "name": "heartgold-soulsilver"
+      }
+    },
+    {
+      "flavor_text": "The stench helps keep wild Pokémon away.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/9/",
+        "name": "platinum"
+      }
+    },
+    {
+      "flavor_text": "The stench helps keep wild Pokémon away.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/8/",
+        "name": "diamond-pearl"
+      }
+    },
+    {
+      "flavor_text": "Helps repel wild POKéMON.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/7/",
+        "name": "firered-leafgreen"
+      }
+    },
+    {
+      "flavor_text": "Helps repel wild POKéMON.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/6/",
+        "name": "emerald"
+      }
+    },
+    {
+      "flavor_text": "Helps repel wild POKéMON.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/5/",
+        "name": "ruby-sapphire"
+      }
+    }
+  ],
+  "id": 1
+}

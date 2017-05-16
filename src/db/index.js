@@ -4,7 +4,7 @@ const db = new Lokijs('lt.pokedex')
 
 const ability = require('./ability')
 const berry = require('./berry')
-const languages = require('./languages')
+const language = require('./language')
 
 module.exports = () => {
   let collections = {}
@@ -38,7 +38,7 @@ module.exports = () => {
     itemAttributes () {},
     itemFlingEffects () {},
     itemPockets () {},
-    languages,
+    language,
     locations () {},
     locationAreas () {},
     moves () {},
