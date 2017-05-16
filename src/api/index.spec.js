@@ -28,4 +28,4 @@ const matchJson = (action, args, file) => {
 
 matchJson('ability', [1], 'ability-1')
 matchJson('language', [9], 'language-9')
-// matchJson('berry', [1], 'berry-1')
+matchJson('berry', [1], 'berry-1')
