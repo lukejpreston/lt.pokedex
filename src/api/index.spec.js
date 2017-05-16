@@ -153,3 +153,56 @@ describe('ability', () => {
     })
   })
 })
+
+describe('berry', () => {
+  describe('get', () => {
+    test('using an id', () => {
+      const berry = api.berry(1)
+      expect(berry.id).toBe(1)
+    })
+
+    test('using a name', () => {
+      const berry = api.berry('cheri')
+      expect(berry.id).toBe(1)
+    })
+  })
+
+  describe('has', () => {
+    let berry = null
+    beforeEach(() => {
+      berry = api.berry(1)
+    })
+
+    test('id', () => {
+      expect(berry.id).toBe(1)
+    })
+
+    test('name', () => {
+      expect(berry.name).toBe('cheri')
+    })
+
+    test('growth time', () => {
+      expect(berry.growth_time).toBe(3)
+    })
+
+    test('max harvest', () => {
+      expect(berry.max_harvest).toBe(5)
+    })
+
+    test('natural gift power', () => {
+      expect(berry.natural_gift_power).toBe(60)
+    })
+
+    test('size', () => {
+      expect(berry.size).toBe(20)
+    })
+
+    test('smoothness', () => {
+      expect(berry.smoothness).toBe(25)
+    })
+
+    test('soil dryness', () => {
+      expect(berry.soil_dryness).toBe(15)
+    })
+  })
+})
