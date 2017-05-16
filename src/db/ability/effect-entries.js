@@ -1,14 +1,21 @@
+const utils = require('../utils')
+
 module.exports = (db, a) => {
   const abilityProseCollection = db.getCollection('_ability_prose')
-  const abilityProses = abilityProseCollection.where(an => an.ability_id === a.id && an.local_language_id === '9')
-  if (abilityProses.length > 0) {
-    return [{
-      effect: abilityProses[0].effect,
-      short_effect: abilityProses[0].short_effect,
+  const languagesCollection = db.getCollection('_languages')
+
+  const abilityProse = abilityProseCollection.find({ability_id: a.id})
+
+  return abilityProse.map(ap => {
+    let language = languagesCollection.findOne({id: ap.local_language_id})
+
+    return {
+      effect: utils.stripQuotesAndDoubleSpace(utils.stripMechanic(ap.effect)),
+      short_effect: utils.stripMechanic(ap.short_effect),
       language: {
-        name: 'en',
-        url: 'http://pokeapi.co/api/v2/language/9/'
+        name: language.identifier,
+        url: `http://pokeapi.co/api/v2/language/${language.id}/`
       }
-    }]
-  }
+    }
+  })
 }

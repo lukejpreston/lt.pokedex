@@ -9,13 +9,18 @@ module.exports = (db, a) => {
   })
 
   const abilityChangelogProseCollection = db.getCollection('_ability_changelog_prose')
-  const abilityChangelogProse = abilityChangelogProseCollection.where(acp => acp.local_language_id === '9' && acp.ability_changelog_id === abilityChangelog.id)
+  const abilityChangelogProse = abilityChangelogProseCollection.find({ability_changelog_id: abilityChangelog.id})
+
+  const languagesCollection = db.getCollection('_languages')
+
   const effectEntries = abilityChangelogProse.map(acp => {
+    let language = languagesCollection.findOne({id: acp.local_language_id})
+
     return {
       effect: acp.effect,
       language: {
-        name: 'en',
-        url: 'http://pokeapi.co/api/v2/language/9/'
+        name: language.identifier,
+        url: `http://pokeapi.co/api/v2/language/${language.id}/`
       }
     }
   })

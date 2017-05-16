@@ -1,21 +1,31 @@
+const utils = require('../utils')
+
 module.exports = (db, a) => {
   const abilityFlavorTextCollection = db.getCollection('_ability_flavor_text')
   const versionGroupsCollection = db.getCollection('_versions')
+  const languagesCollection = db.getCollection('_languages')
 
-  const abilityFlavorText = abilityFlavorTextCollection.where(aft => aft.language_id === '9' && aft.ability_id === a.id)
+  const abilityFlavorText = abilityFlavorTextCollection.find({ability_id: a.id})
+
   return abilityFlavorText.map(aft => {
-    const versionGroups = versionGroupsCollection.findOne({
-      id: aft.version_group_id
-    })
+    const language = languagesCollection.findOne({id: aft.language_id})
+
+    const versionGroup = versionGroupsCollection.find({version_group_id: aft.version_group_id})
+    const name = versionGroup.sort((left, right) => {
+      if (left.id < right.id) return -1
+      if (left.id > right.id) return 1
+      return 0
+    }).map(vg => vg.identifier).join('-')
+
     return {
-      flavor_text: aft.flavor_text,
+      flavor_text: utils.stripQuotesAndDoubleSpace(aft.flavor_text),
       language: {
-        name: 'en',
-        url: 'http://pokeapi.co/api/v2/language/9/'
+        name: language.identifier,
+        url: `http://pokeapi.co/api/v2/language/${language.id}/`
       },
       version_group: {
-        name: versionGroups.identifier,
-        url: `http://pokeapi.co/api/v2/version-group/${versionGroups.id}/`
+        name: name,
+        url: `http://pokeapi.co/api/v2/version-group/${aft.version_group_id}/`
       }
     }
   })
