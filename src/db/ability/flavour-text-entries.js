@@ -2,7 +2,7 @@ const utils = require('../utils')
 
 module.exports = (db, a) => {
   const abilityFlavorTextCollection = db.getCollection('_ability_flavor_text')
-  const versionGroupsCollection = db.getCollection('_versions')
+  const versionsCollection = db.getCollection('_versions')
   const languagesCollection = db.getCollection('_languages')
 
   const abilityFlavorText = abilityFlavorTextCollection.find({ability_id: a.id})
@@ -10,7 +10,7 @@ module.exports = (db, a) => {
   return abilityFlavorText.map(aft => {
     const language = languagesCollection.findOne({id: aft.language_id})
 
-    const versionGroup = versionGroupsCollection.find({version_group_id: aft.version_group_id})
+    const versionGroup = versionsCollection.find({version_group_id: aft.version_group_id})
     const name = versionGroup.sort((left, right) => {
       if (left.id < right.id) return -1
       if (left.id > right.id) return 1

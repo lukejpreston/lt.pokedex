@@ -30,3 +30,7 @@ matchJson('ability', [1], 'ability-1')
 matchJson('language', [9], 'language-9')
 matchJson('berry', [1], 'berry-1')
 // matchJson('pokemon', [1], 'pokemon-1')
+matchJson('pokemon', [12], 'pokemon-12')
+
+const fs = require('fs')
+fs.writeFileSync(process.cwd() + '/../moves.json', JSON.stringify(api.pokemon(12).moves, null, 2))
