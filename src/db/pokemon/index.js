@@ -1,4 +1,5 @@
 const base = require('./base')
+const abilities = require('./abilities')
 const forms = require('./forms')
 const gameIndices = require('./game-indices')
 const heldItems = require('./held-items')
@@ -15,6 +16,7 @@ module.exports = (db) => {
     .filter(p => p.id)
     .forEach(p => {
       let pokemon = base(p)
+      pokemon.abilities = abilities(db, p)
       pokemon.forms = forms(db, p)
       pokemon.game_indices = gameIndices(db, p)
       pokemon.held_items = heldItems(db, p)
