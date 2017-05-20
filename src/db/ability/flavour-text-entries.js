@@ -18,7 +18,7 @@ module.exports = (db, a) => {
     }).map(vg => vg.identifier).join('-')
 
     return {
-      flavor_text: utils.stripQuotesAndDoubleSpace(aft.flavor_text),
+      flavor_text: utils.clean(aft.flavor_text),
       language: {
         name: language.identifier,
         url: `http://pokeapi.co/api/v2/language/${language.id}/`

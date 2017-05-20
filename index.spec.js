@@ -16,8 +16,8 @@ expect.extend({
   }
 })
 
-const matchJson = (action, args, file) => {
-  test(action, () => {
+const matchJson = (desc, action, args, file) => {
+  test(desc, () => {
     const result = api[action].apply(null, args)
 
     const expected = require(`./test-data/${file}.json`)
@@ -26,8 +26,9 @@ const matchJson = (action, args, file) => {
   })
 }
 
-matchJson('ability', [1], 'ability-1')
-matchJson('language', [9], 'language-9')
-matchJson('berry', [1], 'berry-1')
-matchJson('pokemon', [1], 'pokemon-1')
-matchJson('pokemon', [12], 'pokemon-12')
+matchJson('ability', 'ability', [1], 'ability-1')
+matchJson('language', 'language', [9], 'language-9')
+matchJson('berry', 'berry', [1], 'berry-1')
+matchJson('pokemon', 'pokemon', [1], 'pokemon-1')
+matchJson('pokemon, with held items', 'pokemon', [12], 'pokemon-12')
+matchJson('item', 'item', [1], 'item-1')

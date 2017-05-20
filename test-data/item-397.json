@@ -1,0 +1,443 @@
+{
+  "category": {
+    "url": "http://pokeapi.co/api/v2/item-category/37/",
+    "name": "all-machines"
+  },
+  "name": "hm01",
+  "fling_effect": null,
+  "effect_entries": [
+    {
+      "short_effect": "Teaches Cut to a compatible Pokémon.",
+      "effect": "Teaches Cut to a compatible Pokémon.",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    }
+  ],
+  "held_by_pokemon": [],
+  "sprites": {
+    "default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/hm-normal.png"
+  },
+  "game_indices": [
+    {
+      "generation": {
+        "url": "http://pokeapi.co/api/v2/generation/6/",
+        "name": "generation-vi"
+      },
+      "game_index": 420
+    },
+    {
+      "generation": {
+        "url": "http://pokeapi.co/api/v2/generation/5/",
+        "name": "generation-v"
+      },
+      "game_index": 420
+    },
+    {
+      "generation": {
+        "url": "http://pokeapi.co/api/v2/generation/4/",
+        "name": "generation-iv"
+      },
+      "game_index": 420
+    },
+    {
+      "generation": {
+        "url": "http://pokeapi.co/api/v2/generation/3/",
+        "name": "generation-iii"
+      },
+      "game_index": 339
+    }
+  ],
+  "baby_trigger_for": null,
+  "cost": 0,
+  "names": [
+    {
+      "name": "HM01",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "name": "MN01",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/8/",
+        "name": "it"
+      }
+    },
+    {
+      "name": "MO01",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/7/",
+        "name": "es"
+      }
+    },
+    {
+      "name": "VM01",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/6/",
+        "name": "de"
+      }
+    },
+    {
+      "name": "CS01",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      }
+    },
+    {
+      "name": "비전머신01",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/3/",
+        "name": "ko"
+      }
+    },
+    {
+      "name": "ひでんマシン０１",
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/1/",
+        "name": "ja"
+      }
+    }
+  ],
+  "attributes": [],
+  "flavor_text_entries": [
+    {
+      "text": "カマや　ツメなどで 相手を　切りつけて　攻撃する。 細い　樹木も　きることが　できる。",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/11/",
+        "name": "ja-kanji"
+      }
+    },
+    {
+      "text": "The target is cut with a scythe or claw. This can also be used to cut down thin trees.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "Attacca il nemico con artigli o falci affilate. Fuori dalla lotta si usa per tagliare piccoli alberi.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/8/",
+        "name": "it"
+      }
+    },
+    {
+      "text": "Está hecho con huesos de Pokémon y trae buena suerte. Hay que llevarlo a la anciana de Pueblo Caelestis.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/7/",
+        "name": "es"
+      }
+    },
+    {
+      "text": "Das Ziel wird mit scharfen Klingen attackiert. Außerhalb des Kampfes werden damit kleine Bäume gefällt.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/6/",
+        "name": "de"
+      }
+    },
+    {
+      "text": "Coupe l’ennemi avec des lames ou des griffes. Hors combat, permet de couper des arbres fins.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      }
+    },
+    {
+      "text": "낫이나 발톱 등 날카로운 것으로 갈라서 공격한다. 얇은 나무를 자를 수도 있다.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/3/",
+        "name": "ko"
+      }
+    },
+    {
+      "text": "カマや　ツメなどの　するどいもので きりつけて　こうげきする。 ほそいきを　きることも　できる。",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/1/",
+        "name": "ja"
+      }
+    },
+    {
+      "text": "The target is cut with a scythe or claw. It can also be used to cut down thin trees.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/14/",
+        "name": "black-2-white-2"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "The target is cut with a scythe or claw. It can also be used to cut down thin trees.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/11/",
+        "name": "black-white"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "Coupe l’ennemi avec des lames ou des griffes. Hors combat, permet de couper des arbres fins.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/11/",
+        "name": "black-white"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/5/",
+        "name": "fr"
+      }
+    },
+    {
+      "text": "The foe is cut with a scythe or a claw. It can also be used to cut down thin trees.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/10/",
+        "name": "heartgold-soulsilver"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "The foe is cut with a scythe or a claw. It can also be used to cut down thin trees.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/9/",
+        "name": "platinum"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "The foe is cut with a scythe or a claw. It can also be used to cut down thin trees.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/8/",
+        "name": "diamond-pearl"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "A basic attack. It can be used to cut down thin trees and grass.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/7/",
+        "name": "firered-leafgreen"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "Attacks the foe with sharp blades or claws.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/6/",
+        "name": "emerald"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    },
+    {
+      "text": "Attacks the foe with sharp blades or claws.",
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/5/",
+        "name": "ruby-sapphire"
+      },
+      "language": {
+        "url": "http://pokeapi.co/api/v2/language/9/",
+        "name": "en"
+      }
+    }
+  ],
+  "id": 397,
+  "machines": [
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1131/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/15/",
+        "name": "x-y"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1130/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/14/",
+        "name": "black-2-white-2"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1129/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/13/",
+        "name": "xd"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1128/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/12/",
+        "name": "colosseum"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1127/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/11/",
+        "name": "black-white"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1126/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/10/",
+        "name": "heartgold-soulsilver"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1125/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/9/",
+        "name": "platinum"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1124/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/8/",
+        "name": "diamond-pearl"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1123/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/7/",
+        "name": "firered-leafgreen"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1122/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/6/",
+        "name": "emerald"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1121/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/5/",
+        "name": "ruby-sapphire"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1120/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/4/",
+        "name": "crystal"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1119/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/3/",
+        "name": "gold-silver"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1118/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/2/",
+        "name": "yellow"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1117/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/1/",
+        "name": "red-blue"
+      }
+    },
+    {
+      "machine": {
+        "url": "http://pokeapi.co/api/v2/machine/1098/"
+      },
+      "version_group": {
+        "url": "http://pokeapi.co/api/v2/version-group/16/",
+        "name": "omega-ruby-alpha-sapphire"
+      }
+    }
+  ],
+  "fling_power": null
+}

@@ -5,6 +5,7 @@ const db = new Lokijs('lt.pokedex')
 const ability = require('./ability')
 const berry = require('./berry')
 const pokemon = require('./pokemon')
+const item = require('./item')
 const language = require('./language')
 
 module.exports = () => {
@@ -34,7 +35,7 @@ module.exports = () => {
     generations () {},
     genders () {},
     growthRates () {},
-    items () {},
+    item,
     itemCategories () {},
     itemAttributes () {},
     itemFlingEffects () {},

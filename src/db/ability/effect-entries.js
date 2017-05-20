@@ -10,8 +10,8 @@ module.exports = (db, a) => {
     let language = languagesCollection.findOne({id: ap.local_language_id})
 
     return {
-      effect: utils.stripQuotesAndDoubleSpace(utils.stripMechanic(ap.effect)),
-      short_effect: utils.stripMechanic(ap.short_effect),
+      effect: utils.clean(ap.effect),
+      short_effect: utils.clean(ap.short_effect),
       language: {
         name: language.identifier,
         url: `http://pokeapi.co/api/v2/language/${language.id}/`
