@@ -18,6 +18,12 @@ module.exports = () => {
     collections[`_${name}`].insert(data)
   })
 
+  const machinesCollection = db.getCollection('_machines')
+  machinesCollection.data.forEach((m, index) => {
+    m.index = index + 1
+    machinesCollection.update(m)
+  })
+
   let createCollections = {
     ability,
     berry,
