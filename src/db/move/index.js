@@ -1,4 +1,5 @@
 const base = require('./base')
+const meta = require('./meta')
 const names = require('./names')
 const pastValues = require('./past-values')
 const statChanges = require('./stat-changes')
@@ -14,6 +15,7 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
+      move._meta = meta(db, m)
       move.names = names(db, m)
       move.past_values = pastValues(db, m)
       move.stat_changes = statChanges(db, m)
