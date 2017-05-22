@@ -1,4 +1,6 @@
 const base = require('./base')
+const generation = require('./generaton')
+const machines = require('./machines')
 const meta = require('./meta')
 const names = require('./names')
 const pastValues = require('./past-values')
@@ -15,6 +17,8 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
+      move.generation = generation(db, m)
+      move.machines = machines(db, m)
       move._meta = meta(db, m)
       move.names = names(db, m)
       move.past_values = pastValues(db, m)
