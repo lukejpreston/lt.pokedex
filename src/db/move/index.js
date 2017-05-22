@@ -1,4 +1,5 @@
 const base = require('./base')
+const names = require('./names')
 const pastValues = require('./past-values')
 const statChanges = require('./stat-changes')
 const superContestEffect = require('./super-contest-effect')
@@ -13,6 +14,7 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
+      move.names = names(db, m)
       move.past_values = pastValues(db, m)
       move.stat_changes = statChanges(db, m)
       move.super_contest_effect = superContestEffect(db, m)
