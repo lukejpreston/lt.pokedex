@@ -7,6 +7,7 @@ const berry = require('./berry')
 const pokemon = require('./pokemon')
 const item = require('./item')
 const language = require('./language')
+const move = require('./move')
 
 module.exports = () => {
   let collections = {}
@@ -50,7 +51,7 @@ module.exports = () => {
     'location',
     'locationArea',
     'machine',
-    'move',
+    move,
     'moveAilment',
     'moveBattleStyle',
     'moveCategory',
