@@ -1,4 +1,5 @@
 const base = require('./base')
+const flavorTextEntries = require('./flavor-text-entries')
 const generation = require('./generaton')
 const machines = require('./machines')
 const meta = require('./meta')
@@ -17,6 +18,7 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
+      move.flavor_text_entries = flavorTextEntries
       move.generation = generation(db, m)
       move.machines = machines(db, m)
       move._meta = meta(db, m)
