@@ -43,8 +43,15 @@ const combos = (db, m, type) => {
 }
 
 module.exports = (db, m) => {
-  return {
+  const data = {
     super: combos(db, m, '_super'),
     normal: combos(db, m, '')
   }
+
+  if (data.super.use_after === null &&
+    data.super.use_before === null &&
+    data.normal.use_after === null &&
+    data.normal.use_before === null) return null
+
+  return data
 }
