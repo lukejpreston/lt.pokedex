@@ -1,4 +1,5 @@
 const base = require('./base')
+const effectEntries = require('./effect-entries')
 const flavorTextEntries = require('./flavor-text-entries')
 const generation = require('./generaton')
 const machines = require('./machines')
@@ -18,6 +19,7 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
+      move.effect_entries = effectEntries(db, m)
       move.flavor_text_entries = flavorTextEntries(db, m)
       move.generation = generation(db, m)
       move.machines = machines(db, m)
