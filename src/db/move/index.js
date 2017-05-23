@@ -1,4 +1,5 @@
 const base = require('./base')
+const contestCombos = require('./contest-combos')
 const contestEffect = require('./contest-effect')
 const contestType = require('./contest-type')
 const damageClass = require('./damage-class')
@@ -23,6 +24,7 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
+      move.contest_combos = contestCombos(db, m)
       move.contest_effect = contestEffect(db, m)
       move.contest_type = contestType(db, m)
       move.damage_class = damageClass(db, m)
