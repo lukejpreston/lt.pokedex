@@ -26,8 +26,8 @@ module.exports = () => {
   })
 
   let createCollections = [
-    // ability, DONE
-    // berry, DONE
+    ability,
+    berry,
     'berryFirmness',
     'berryFlavor',
     'characteristic',
@@ -42,12 +42,12 @@ module.exports = () => {
     'gender',
     'generation',
     'growthRate',
-    // item, DONE
+    item,
     'itemAttribute',
     'itemCategory',
     'itemFlingEffect',
     'itemPocket',
-    // language, DONE
+    language,
     'location',
     'locationArea',
     'machine',
