@@ -11,7 +11,7 @@ module.exports = {
   clean (line) {
     if (typeof line !== 'string') line = String(line)
 
-    line = removeDoubles(line).replace(/"/g, '')
+    line = removeDoubles(line).replace(/"/g, '').replace(/\n/g, '')
     const match = line.match(reg)
     if (match === null) return line
     match.forEach(m => {

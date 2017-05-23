@@ -18,7 +18,7 @@ module.exports = (db) => {
     .filter(m => m.id)
     .forEach(m => {
       let move = base(m)
-      move.flavor_text_entries = flavorTextEntries
+      move.flavor_text_entries = flavorTextEntries(db, m)
       move.generation = generation(db, m)
       move.machines = machines(db, m)
       move._meta = meta(db, m)
