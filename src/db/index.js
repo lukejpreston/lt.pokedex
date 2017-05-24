@@ -4,10 +4,11 @@ const db = new Lokijs('lt.pokedex')
 
 const ability = require('./ability')
 const berry = require('./berry')
-const pokemon = require('./pokemon')
 const item = require('./item')
 const language = require('./language')
 const move = require('./move')
+const pokemon = require('./pokemon')
+const version = require('./version')
 
 module.exports = () => {
   let collections = {}
@@ -72,7 +73,7 @@ module.exports = () => {
     'stat',
     'superContestEffect',
     'type',
-    'version',
+    version,
     'versionGroup'
   ]
 
