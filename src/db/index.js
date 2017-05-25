@@ -9,6 +9,7 @@ const language = require('./language')
 const move = require('./move')
 const pokemon = require('./pokemon')
 const version = require('./version')
+const versionGroup = require('./version-group')
 
 module.exports = () => {
   let collections = {}
@@ -74,7 +75,7 @@ module.exports = () => {
     'superContestEffect',
     'type',
     version,
-    'versionGroup'
+    versionGroup
   ]
 
   createCollections.forEach(collection => {

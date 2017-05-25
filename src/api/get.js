@@ -1,9 +1,10 @@
+const changeCase = require('change-case')
 const deLokiClone = require('../de-loki-clone')
 
 module.exports = (name) => {
   return (db) => {
     return (idName) => {
-      const collection = db.getCollection(name)
+      const collection = db.getCollection(changeCase.param(name))
 
       const byName = collection.findOne({ name: idName })
       if (byName) return deLokiClone(byName)
