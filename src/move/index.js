@@ -19,7 +19,7 @@ const find = require('../find')
 
 module.exports = (options) => {
   const db = options.db
-  let m = find(Object.assign({}, options, {collectionName: '_items'}))
+  let m = find(Object.assign({}, options, {collectionName: '_moves'}))
 
   let move = base(m)
   move.contest_combos = contestCombos(db, m)
