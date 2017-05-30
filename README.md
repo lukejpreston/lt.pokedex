@@ -137,7 +137,7 @@ it frees up the ability to use named variables you would actually want to use
 
 ## TODO
 
-* make the API the same as pokeapi
-* re-use my collections in order to make things simpler and quicker
-* make it so you can make your own db
-* not passing in params will give back whole list of options
+* swap everything to use new cache method instead of previous pre-cache
+* add `all` to each thing, e.g. `pokeapi.pokemon()` will return all pokemon
+* make make a huge list of common finding things
+* do the rest of the api
