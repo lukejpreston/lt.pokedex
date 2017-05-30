@@ -6,11 +6,10 @@ const generation = require('./generation')
 const names = require('./names')
 const pokemon = require('./pokemon')
 
+const find = require('../find')
+
 module.exports = ({db, id = null, name = null}) => {
-  const abilitiesCollection = db.getCollection('_abilities')
-  let a = null
-  if (id !== null) a = abilitiesCollection.findOne({id})
-  if (name !== null) a = abilitiesCollection.findOne({identifier: name})
+  let a = find({db, id, name, collectionName: '_abilities'})
 
   let ability = base(a)
   ability.effect_changes = effectChanges(db, a)

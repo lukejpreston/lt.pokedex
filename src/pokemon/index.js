@@ -9,11 +9,10 @@ const sprites = require('./sprites')
 const stats = require('./stats')
 const types = require('./types')
 
-module.exports = ({db, id = null, name = null}) => {
-  const pokemonCollection = db.getCollection('_pokemon')
-  let p = null
-  if (id !== null) p = pokemonCollection.findOne({id})
-  if (name !== null) p = pokemonCollection.findOne({identifier: name})
+const find = require('../find')
+
+module.exports = ({db, id, name}) => {
+  let p = find({db, id, name, collectionName: '_pokemon'})
 
   let pokemon = base(p)
   pokemon.abilities = abilities(db, p)
