@@ -1,17 +1,12 @@
 const base = require('./base')
 const names = require('./names')
+const find = require('../find')
 
-module.exports = (db) => {
-  const languagesCollection = db.getCollection('_languages')
-  const collection = db.addCollection('language')
+module.exports = ({db, id = null, name = null}) => {
+  let l = find({db, id, name, collectionName: '_languages'})
 
-  languagesCollection
-    .data
-    .forEach(l => {
-      let language = base(l)
-      language.names = names(db, l)
-      collection.insert(language)
-    })
+  let language = base(l)
+  language.names = names(db, l)
 
-  return collection
+  return language
 }

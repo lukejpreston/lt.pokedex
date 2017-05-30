@@ -27,7 +27,7 @@ const matchJson = (desc, action, args, file) => {
 }
 
 matchJson('ability', 'ability', [1], 'ability-1')
-// matchJson('language', 'language', [9], 'language-9')
+matchJson('language', 'language', [9], 'language-9')
 // matchJson('berry', 'berry', [1], 'berry-1')
 matchJson('pokemon', 'pokemon', [1], 'pokemon-1')
 matchJson('pokemon, with held items', 'pokemon', [12], 'pokemon-12')

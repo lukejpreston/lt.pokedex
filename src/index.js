@@ -52,7 +52,7 @@ module.exports = () => {
     // itemCategory: 'itemCategory',
     // itemFlingEffect: 'itemFlingEffect',
     // itemPocket: 'itemPocket',
-    // language: get(db, language, 'language'),
+    language: get(db, language, 'language'),
     // location: 'location',
     // locationArea: 'locationArea',
     // machine: 'machine',
