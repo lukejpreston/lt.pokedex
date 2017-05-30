@@ -8,6 +8,7 @@ const item = require('./item')
 const language = require('./language')
 const move = require('./move')
 const pokemon = require('./pokemon')
+const type = require('./type')
 const version = require('./version')
 const versionGroup = require('./version-group')
 
@@ -27,60 +28,54 @@ module.exports = () => {
     machinesCollection.update(m)
   })
 
-  let createCollections = [
-    ability,
+  return {
+    ability: ability(db),
     berry,
-    'berryFirmness',
-    'berryFlavor',
-    'characteristic',
-    'contestEffect',
-    'contestType',
-    'eggGroup',
-    'encounterCondition',
-    'encounterConditionValue',
-    'encounterMethod',
-    'evolutionChain',
-    'evolutionTrigger',
-    'gender',
-    'generation',
-    'growthRate',
+    berryFirmness: 'berryFirmness',
+    berryFlavor: 'berryFlavor',
+    characteristic: 'characteristic',
+    contestEffect: 'contestEffect',
+    contestType: 'contestType',
+    eggGroup: 'eggGroup',
+    encounterCondition: 'encounterCondition',
+    encounterConditionValue: 'encounterConditionValue',
+    encounterMethod: 'encounterMethod',
+    evolutionChain: 'evolutionChain',
+    evolutionTrigger: 'evolutionTrigger',
+    gender: 'gender',
+    generation: 'generation',
+    growthRate: 'growthRate',
     item,
-    'itemAttribute',
-    'itemCategory',
-    'itemFlingEffect',
-    'itemPocket',
+    itemAttribute: 'itemAttribute',
+    itemCategory: 'itemCategory',
+    itemFlingEffect: 'itemFlingEffect',
+    itemPocket: 'itemPocket',
     language,
-    'location',
-    'locationArea',
-    'machine',
+    location: 'location',
+    locationArea: 'locationArea',
+    machine: 'machine',
     move,
-    'moveAilment',
-    'moveBattleStyle',
-    'moveCategory',
-    'moveDamageClass',
-    'moveLearnMethod',
-    'moveTarget',
-    'nature',
-    'palParkArea',
-    'pokeathlonStat',
-    'pokedex',
-    // pokemon, DONE
-    'pokemonColor',
-    'pokemonForm',
-    'pokemonHabitat',
-    'pokemonShape',
-    'pokemonSpecies',
-    'region',
-    'stat',
-    'superContestEffect',
-    'type',
+    moveAilment: 'moveAilment',
+    moveBattleStyle: 'moveBattleStyle',
+    moveCategory: 'moveCategory',
+    moveDamageClass: 'moveDamageClass',
+    moveLearnMethod: 'moveLearnMethod',
+    moveTarget: 'moveTarget',
+    nature: 'nature',
+    palParkArea: 'palParkArea',
+    pokeathlonStat: 'pokeathlonStat',
+    pokedex: 'pokedex',
+    pokemon,
+    pokemonColor: 'pokemonColor',
+    pokemonForm: 'pokemonForm',
+    pokemonHabitat: 'pokemonHabitat',
+    pokemonShape: 'pokemonShape',
+    pokemonSpecies: 'pokemonSpecies',
+    region: 'region',
+    stat: 'stat',
+    superContestEffect: 'superContestEffect',
+    type,
     version,
     versionGroup
-  ]
-
-  createCollections.forEach(collection => {
-    if (typeof collection !== 'string') collection(db)
-  })
-
-  return db
+  }
 }

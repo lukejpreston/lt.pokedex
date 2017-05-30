@@ -1,3 +1,3 @@
-const api = require('./src/api')
+const api = require('./src/db')()
 
 module.exports = api

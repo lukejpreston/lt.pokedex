@@ -1,8 +1,10 @@
+const utils = require('../utils')
+
 module.exports = (db, i) => {
   const itemFlagMapCollection = db.getCollection('_item_flag_map')
   const itemFlagsCollection = db.getCollection('_item_flags')
 
-  return itemFlagMapCollection
+  const data = itemFlagMapCollection
     .find({item_id: i.id})
     .map(ifm => {
       const itemFlag = itemFlagsCollection.findOne({id: ifm.item_flag_id})
@@ -11,9 +13,6 @@ module.exports = (db, i) => {
         name: itemFlag.identifier
       }
     })
-    .sort((left, right) => {
-      if (left.url < right.url) return -1
-      if (left.url > right.url) return 1
-      return 0
-    })
+
+  return utils.sortAsc(data, 'item-attribute')
 }

@@ -1,26 +1,23 @@
-const base = require('./base')
-const effectChanges = require('./effect-changes')
-const effectEntries = require('./effect-entries')
-const flavorTextEntries = require('./flavour-text-entries')
-const generation = require('./generation')
-const names = require('./names')
-const pokemon = require('./pokemon')
+const find = require('./find')
+const deLoki = require('../../de-loki-clone')
 
 module.exports = (db) => {
   const collection = db.addCollection('ability')
 
-  db.getCollection('_abilities').data
-    .filter(a => a.id)
-    .forEach(a => {
-      let ability = base(a)
-      ability.effect_changes = effectChanges(db, a)
-      ability.effect_entries = effectEntries(db, a)
-      ability.flavor_text_entries = flavorTextEntries(db, a)
-      ability.generation = generation(db, a)
-      ability.names = names(db, a)
-      ability.pokemon = pokemon(db, a)
-      collection.insert(ability)
-    })
+  return (idOrName) => {
+    const isUsingId = typeof idOrName === 'number'
+    const isUsingName = typeof idOrName === 'string'
 
-  return collection
+    let ability = {}
+    if (typeof idOrName === 'undefined') console.log('get list')
+    if (isUsingId) ability = collection.findOne({id: idOrName})
+    if (isUsingName) ability = collection.findOne({name: idOrName})
+
+    if (ability === null && isUsingId) {
+      ability = find({db, id: idOrName})
+      collection.insert(ability)
+    }
+
+    return deLoki(ability)
+  }
 }
