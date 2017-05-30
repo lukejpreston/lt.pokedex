@@ -8,8 +8,9 @@ const pokemon = require('./pokemon')
 
 const find = require('../find')
 
-module.exports = ({db, id = null, name = null}) => {
-  let a = find({db, id, name, collectionName: '_abilities'})
+module.exports = (options) => {
+  const db = options.db
+  let a = find(Object.assign({}, options, {collectionName: '_abilities'}))
 
   let ability = base(a)
   ability.effect_changes = effectChanges(db, a)

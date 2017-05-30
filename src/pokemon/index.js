@@ -11,8 +11,9 @@ const types = require('./types')
 
 const find = require('../find')
 
-module.exports = ({db, id, name}) => {
-  let p = find({db, id, name, collectionName: '_pokemon'})
+module.exports = (options) => {
+  const db = options.db
+  let p = find(Object.assign({}, options, {collectionName: '_pokemon'}))
 
   let pokemon = base(p)
   pokemon.abilities = abilities(db, p)

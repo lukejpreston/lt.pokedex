@@ -32,7 +32,7 @@ module.exports = () => {
 
   return {
     ability: get(db, ability, 'ability'),
-    // berry,
+    berry: get(db, berry, 'berry'),
     // berryFirmness: 'berryFirmness',
     // berryFlavor: 'berryFlavor',
     // characteristic: 'characteristic',
@@ -47,7 +47,7 @@ module.exports = () => {
     // gender: 'gender',
     // generation: 'generation',
     // growthRate: 'growthRate',
-    // item,
+    item: get(db, item, 'item'),
     // itemAttribute: 'itemAttribute',
     // itemCategory: 'itemCategory',
     // itemFlingEffect: 'itemFlingEffect',
@@ -56,7 +56,7 @@ module.exports = () => {
     // location: 'location',
     // locationArea: 'locationArea',
     // machine: 'machine',
-    // move,
+    move: get(db, move, 'move'),
     // moveAilment: 'moveAilment',
     // moveBattleStyle: 'moveBattleStyle',
     // moveCategory: 'moveCategory',
@@ -67,7 +67,7 @@ module.exports = () => {
     // palParkArea: 'palParkArea',
     // pokeathlonStat: 'pokeathlonStat',
     // pokedex: 'pokedex',
-    pokemon: get(db, pokemon, 'pokemon')
+    pokemon: get(db, pokemon, 'pokemon'),
     // pokemonColor: 'pokemonColor',
     // pokemonForm: 'pokemonForm',
     // pokemonHabitat: 'pokemonHabitat',
@@ -76,8 +76,8 @@ module.exports = () => {
     // region: 'region',
     // stat: 'stat',
     // superContestEffect: 'superContestEffect',
-    // type,
-    // version,
-    // versionGroup
+    type: get(db, type, 'type'),
+    version: get(db, version, 'version'),
+    versionGroup: get(db, versionGroup, 'versionGroup')
   }
 }
