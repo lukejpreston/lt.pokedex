@@ -1,16 +1,11 @@
-module.exports = (db, m) => {
-  const moveNamesCollection = db.getCollection('_move_names')
-  const languagesCollection = db.getCollection('_languages')
+const language = require('../common/language')
 
-  return moveNamesCollection
+module.exports = (db, m) => {
+  return db.getCollection('_move_names')
     .find({move_id: m.id})
     .map(mn => {
-      const language = languagesCollection.findOne({id: mn.local_language_id})
       return {
-        language: {
-          url: `http://pokeapi.co/api/v2/language/${mn.local_language_id}/`,
-          name: language.identifier
-        },
+        language: language({db, id: mn.local_language_id}),
         name: mn.name
       }
     })

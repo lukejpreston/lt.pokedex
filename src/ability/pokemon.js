@@ -1,21 +1,14 @@
 const utils = require('../utils')
+const pokemon = require('../common/pokemon')
 
 module.exports = (db, a) => {
-  const pokemonAbilitiesCollection = db.getCollection('_pokemon_abilities')
-  const pokemonCollection = db.getCollection('_pokemon')
-
-  const pokemonAbilities = pokemonAbilitiesCollection.find({ability_id: a.id})
-
-  const data = pokemonAbilities
+  const data = db.getCollection('_pokemon_abilities')
+    .find({ability_id: a.id})
     .map(pa => {
-      const pokemon = pokemonCollection.findOne({id: pa.pokemon_id})
       return {
         slot: pa.slot,
         is_hidden: pa.is_hidden,
-        pokemon: {
-          name: pokemon.identifier,
-          url: `http://pokeapi.co/api/v2/pokemon/${pokemon.id}/`
-        }
+        pokemon: pokemon({db, id: pa.pokemon_id})
       }
     })
   utils.sortAsc(data, 'pokemon', 'pokemon')

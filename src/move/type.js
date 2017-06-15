@@ -1,9 +1,5 @@
-module.exports = (db, m) => {
-  const typesCollection = db.getCollection('_types')
-  const type = typesCollection.findOne({id: m.type_id})
+const type = require('../common/type')
 
-  return {
-    url: `http://pokeapi.co/api/v2/type/${m.type_id}/`,
-    name: type.identifier
-  }
+module.exports = (db, m) => {
+  return type({db, id: m.type_id})
 }

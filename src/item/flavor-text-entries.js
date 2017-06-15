@@ -1,23 +1,14 @@
-module.exports = (db, i) => {
-  const itemFlavorTextCollection = db.getCollection('_item_flavor_text')
-  const languagesCollection = db.getCollection('_languages')
-  const versionGroupsCollection = db.getCollection('_version_groups')
+const language = require('../common/language')
+const versionGroups = require('../common/version-groups')
 
-  return itemFlavorTextCollection
+module.exports = (db, i) => {
+  return db.getCollection('_item_flavor_text')
     .find({item_id: i.id})
     .map(ift => {
-      const language = languagesCollection.findOne({id: ift.language_id})
-      const versionGroup = versionGroupsCollection.findOne({id: ift.version_group_id})
       return {
-        language: {
-          url: `http://pokeapi.co/api/v2/language/${language.id}/`,
-          name: language.identifier
-        },
+        language: language({db, id: ift.language_id}),
         text: String(ift.flavor_text).replace(/"/g, ''),
-        version_group: {
-          url: `http://pokeapi.co/api/v2/version-group/${versionGroup.id}/`,
-          name: versionGroup.identifier
-        }
+        version_group: versionGroups({db, id: ift.version_group_id})
       }
     })
 }

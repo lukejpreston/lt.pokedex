@@ -1,20 +1,14 @@
-module.exports = (db, i) => {
-  const machinesCollection = db.getCollection('_machines')
-  const versionGroupsCollection = db.getCollection('_version_groups')
+const versionGroups = require('../common/version-groups')
 
-  return machinesCollection
+module.exports = (db, i) => {
+  return db.getCollection('_machines')
     .find({item_id: i.id})
     .map(m => {
-      const versionGroup = versionGroupsCollection.findOne({id: m.version_group_id})
-
       return {
         machine: {
           url: `http://pokeapi.co/api/v2/machine/${m.index}/`
         },
-        version_group: {
-          name: versionGroup.identifier,
-          url: `http://pokeapi.co/api/v2/version-group/${versionGroup.id}/`
-        }
+        version_group: versionGroups({db, id: m.version_group_id})
       }
     })
 }

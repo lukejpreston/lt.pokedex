@@ -1,18 +1,14 @@
 const utils = require('../utils')
+const language = require('../common/language')
 
 module.exports = (db, i) => {
-  const iemProseCollection = db.getCollection('_item_prose')
-  const languagesCollection = db.getCollection('_languages')
-  const itemProse = iemProseCollection.find({item_id: i.id})
-  return itemProse.map(ip => {
-    const language = languagesCollection.findOne({id: ip.local_language_id})
-    return {
-      short_effect: utils.clean(ip.short_effect),
-      effect: utils.clean(ip.effect),
-      language: {
-        name: language.identifier,
-        url: `http://pokeapi.co/api/v2/language/${language.id}/`
+  return db.getCollection('_item_prose')
+    .find({item_id: i.id})
+    .map(ip => {
+      return {
+        short_effect: utils.clean(ip.short_effect),
+        effect: utils.clean(ip.effect),
+        language: language({db, id: ip.local_language_id})
       }
-    }
-  })
+    })
 }

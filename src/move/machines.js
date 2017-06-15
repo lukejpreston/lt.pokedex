@@ -1,20 +1,16 @@
+const versionGroup = require('../common/version-groups')
+
 module.exports = (db, m) => {
-  const machinesCollection = db.getCollection('_machines')
-  const versionGroupsCollection = db.getCollection('_version_groups')
-  return machinesCollection
+  return db.getCollection('_machines')
     .find({move_id: m.id})
-  .map(ma => {
-    const versionGroup = versionGroupsCollection.findOne({id: ma.version_group_id})
-    return {
-      machine: {
-        url: `http://pokeapi.co/api/v2/machine/${ma.index}/`
-      },
-      version_group: {
-        url: `http://pokeapi.co/api/v2/version-group/${versionGroup.id}/`,
-        name: versionGroup.identifier
+    .map(ma => {
+      return {
+        machine: {
+          url: `http://pokeapi.co/api/v2/machine/${ma.index}/`
+        },
+        version_group: versionGroup({db, id: ma.version_group_id})
       }
-    }
-  })
+    })
     .sort((left, right) => {
       if (left.machine.url < right.machine.url) return -1
       if (left.machine.url > right.machine.url) return 1
