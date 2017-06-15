@@ -1,32 +1,15 @@
 const utils = require('../utils')
+const versionGroups = require('../common/version-groups')
+const language = require('../common/language')
 
 module.exports = (db, a) => {
-  const abilityFlavorTextCollection = db.getCollection('_ability_flavor_text')
-  const versionsCollection = db.getCollection('_versions')
-  const languagesCollection = db.getCollection('_languages')
-
-  const abilityFlavorText = abilityFlavorTextCollection.find({ability_id: a.id})
-
-  return abilityFlavorText.map(aft => {
-    const language = languagesCollection.findOne({id: aft.language_id})
-
-    const versionGroup = versionsCollection.find({version_group_id: aft.version_group_id})
-    const name = versionGroup.sort((left, right) => {
-      if (left.id < right.id) return -1
-      if (left.id > right.id) return 1
-      return 0
-    }).map(vg => vg.identifier).join('-')
-
-    return {
-      flavor_text: utils.clean(aft.flavor_text),
-      language: {
-        name: language.identifier,
-        url: `http://pokeapi.co/api/v2/language/${language.id}/`
-      },
-      version_group: {
-        name: name,
-        url: `http://pokeapi.co/api/v2/version-group/${aft.version_group_id}/`
+  return db.getCollection('_ability_flavor_text')
+    .find({ability_id: a.id})
+    .map(aft => {
+      return {
+        flavor_text: utils.clean(aft.flavor_text),
+        language: language({db, id: aft.language_id}),
+        version_group: versionGroups({db, id: aft.version_group_id})
       }
-    }
-  })
+    })
 }
